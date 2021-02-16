@@ -10,7 +10,7 @@ pipeline {
     stage('Publish') {
       steps {
         script {
-        docker.withRegistry( 'dockerhub' ) {
+        docker.withRegistry('https://registry.hub.docker.com', 'dockerhub') {
         sh 'docker push bekakochauri/nginx:latest '
         }
         }
