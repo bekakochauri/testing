@@ -10,7 +10,7 @@ pipeline {
     stage('Publish') {
       steps {
         script {
-        docker.withRegistry('dockerhub') {
+        withDockerRegistry([ credentialsId: "dockerhub", url: "" ]) {
 
         sh 'docker push bekakochauri/nginx:latest '
         }
@@ -23,7 +23,7 @@ pipeline {
         input "Are you ready to deploy?"
         sh '''
         cd ~
-        ocker stop demo_nginx_1
+        docker stop demo_nginx_1
         docker-compose rm -f 
         docker-compose  up -d
            '''
