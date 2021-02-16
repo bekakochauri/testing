@@ -24,8 +24,9 @@ pipeline {
         sh '''
         cd ~
         docker stop root_nginx_1
-        docker-compose rm -f 
-        docker-compose  up -d
+        docker-compose rm -f /root/docker-compose.yaml
+        docker-compose  up -f /root/docker-compose.yaml -d
+        
            '''
       }
     }
