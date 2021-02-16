@@ -12,7 +12,7 @@ pipeline {
         script {
         docker.withRegistry('dockerhub') {
 
-        sh 'docker logout && docker push bekakochauri/nginx:latest '
+        sh 'docker push bekakochauri/nginx:latest '
         }
         }
       }
