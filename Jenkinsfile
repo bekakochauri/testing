@@ -23,7 +23,7 @@ pipeline {
         input "Are you ready to deploy?"
         sh '''
         cd ~
-        docker stop demo_nginx_1
+        docker stop root_nginx_1
         docker-compose rm -f 
         docker-compose  up -d
            '''
