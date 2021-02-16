@@ -20,7 +20,7 @@ pipeline {
 
     stage('Deploy') {
       steps {
-        input "Are you ready to deploy?"
+//        input "Are you ready to deploy?"
         sh '''
         cd /opt/docker
         
