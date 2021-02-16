@@ -22,7 +22,7 @@ pipeline {
       steps {
         input "Are you ready to deploy?"
         sh '''
-        cd ~
+        cd /root
         
         docker stop root_nginx_1
         docker-compose rm -f 
