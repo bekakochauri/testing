@@ -9,7 +9,7 @@ pipeline {
     }
     stage('Publish') {
       steps {
-        sh ' push bekakochauri/nginx:latest '
+        sh 'docker push bekakochauri/nginx:latest '
       }
     }
 
