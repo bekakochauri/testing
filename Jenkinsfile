@@ -4,12 +4,12 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh '/Applications/Docker.app/Contents/Resources/bin/docker build -t bekakochauri/nginx:latest .'
+        sh 'docker build -t bekakochauri/nginx:latest .'
       }
     }
     stage('Publish') {
       steps {
-        sh '/Applications/Docker.app/Contents/Resources/bin/docker push bekakochauri/nginx:latest '
+        sh ' push bekakochauri/nginx:latest '
       }
     }
 
@@ -18,10 +18,10 @@ pipeline {
       steps {
         input "Are you ready to deploy?"
         sh '''
-        cd /opt/demo
-        /Applications/Docker.app/Contents/Resources/bin/docker stop demo_nginx_1
-        /Applications/Docker.app/Contents/Resources/bin/docker-compose/docker-compose rm -f 
-        /Applications/Docker.app/Contents/Resources/bin/docker-compose/docker-compose  up -d
+        cd ~
+        ocker stop demo_nginx_1
+        docker-compose rm -f 
+        docker-compose  up -d
            '''
       }
     }
