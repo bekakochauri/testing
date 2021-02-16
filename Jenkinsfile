@@ -22,10 +22,12 @@ pipeline {
       steps {
         input "Are you ready to deploy?"
         sh '''
-        cd ~
+        cd /root
+        
         docker stop root_nginx_1
-        docker-compose rm -f /root/docker-compose.yaml
-        docker-compose  up -f /root/docker-compose.yaml -d
+        ls
+        docker-compose rm -f 
+        docker-compose  up -d
         
            '''
       }
